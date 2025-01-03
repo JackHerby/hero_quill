@@ -6,4 +6,8 @@ export default antfu({
     'antfu/if-newline': 'off',
     'node/prefer-global/process': 'off',
   },
+  stylistic: {
+    indent: 4,
+    semi: true,
+  }
 })
