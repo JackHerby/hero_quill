@@ -1,10 +1,10 @@
 // eslint.config.mjs
-import antfu from '@antfu/eslint-config'
+import antfu from "@antfu/eslint-config";
 
 export default antfu({
     stylistic: {
         indent: 4,
         semi: true,
-        quotes: "double"
-    }
-})
+        quotes: "double",
+    },
+});
