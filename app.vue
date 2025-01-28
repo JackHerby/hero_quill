@@ -15,8 +15,10 @@ onMounted(() => getTestData());
 
 <template>
     <div>
-        <h1 v-for="item in testData" :key="item.id">
-            {{ item.name }} -- {{ item.created_at }}
-        </h1>
+        <UContainer>
+            <h1 v-for="item in testData" :key="item.id">
+                {{ item.name }} -- {{ item.created_at }}
+            </h1>
+        </UContainer>
     </div>
 </template>
