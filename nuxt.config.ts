@@ -9,11 +9,5 @@ export default defineNuxtConfig({
     },
     compatibilityDate: "2024-11-01",
     devtools: { enabled: true },
-    modules: ["@nuxt/ui", "@nuxt/test-utils/module", "nuxt-api-party"],
-    runtimeConfig: {
-        public: {
-            supabaseUrl: process.env.SUPABASE_URL,
-            supabaseKey: process.env.SUPABASE_KEY,
-        },
-    },
+    modules: ["@nuxtjs/supabase", "@nuxt/test-utils/module", "@nuxt/ui", "nuxt-api-party"],
 });

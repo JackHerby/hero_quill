@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "@nuxt/ui": "^2.21.0",
+        "@nuxtjs/supabase": "^1.4.6",
         "@supabase/supabase-js": "^2.48.1",
         "nuxt": "^3.15.3",
         "nuxt-api-party": "^2.1.2",
