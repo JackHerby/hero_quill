@@ -21,8 +21,8 @@ const links = [{
 </script>
 
 <template>
-    <div class="min-h-screen flex">
-        <aside class="bg-blue-700 w-64 relative">
+    <div class="flex min-h-screen">
+        <aside class="relative w-64 bg-blue-700">
             <div class="fixed w-64">
                 <div class="h-16 border-b">
                     <span>dashboard</span>
@@ -30,8 +30,8 @@ const links = [{
                 <UVerticalNavigation :links="links" :ui="{ base: 'p-4' }" />
             </div>
         </aside>
-        <div class="flex flex-col flex-1">
-            <nav class="h-16 sticky top-0 bg-green-800">
+        <div class="flex flex-1 flex-col">
+            <nav class="sticky top-0 h-16 bg-green-800">
                 navbar
             </nav>
             <UContainer :ui="{ base: 'bg-red-700 flex-1' }">
