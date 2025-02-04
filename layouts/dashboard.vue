@@ -21,12 +21,19 @@ const links = [{
 </script>
 
 <template>
-    <div class="flex h-screen relative">
-        <aside class="bg-blue-700">
-            <UVerticalNavigation :links="links" :ui="{ base: 'h-full' }" />
+    <div class="min-h-screen flex">
+        <aside class="bg-blue-700 w-64 relative">
+            <div class="fixed w-64">
+                <div class="h-16 border-b">
+                    <span>dashboard</span>
+                </div>
+                <UVerticalNavigation :links="links" :ui="{ base: 'p-4' }" />
+            </div>
         </aside>
-        <div class="relative flex-1">
-            <nav class="sticky top-0 bg-green-800">navbar</nav>
+        <div class="flex flex-col flex-1">
+            <nav class="h-16 sticky top-0 bg-green-800">
+                navbar
+            </nav>
             <UContainer :ui="{ base: 'bg-red-700 flex-1' }">
                 <slot />
             </UContainer>
