@@ -1,28 +1,32 @@
 <script setup lang="ts">
-const links = [{
-    label: "Profile",
-    avatar: {
-        src: "https://avatars.githubusercontent.com/u/739984?v=4",
+const links = [
+    {
+        label: "Home",
+        icon: "i-heroicons-home",
+        to: "/",
     },
-    badge: 100,
-}, {
-    label: "Installation",
-    icon: "i-heroicons-home",
-    to: "/getting-started/installation",
-}, {
-    label: "Vertical Navigation",
-    icon: "i-heroicons-chart-bar",
-    to: "/components/vertical-navigation",
-}, {
-    label: "Command Palette",
-    icon: "i-heroicons-command-line",
-    to: "/components/command-palette",
-}];
+    {
+        label: "Character Sheet",
+        icon: "i-heroicons-chart-bar",
+        to: "/character-sheet",
+    },
+    {
+        label: "Campaign Creator",
+        icon: "i-heroicons-command-line",
+        to: "/campaign-creator",
+    },
+];
 </script>
 
 <template>
     <div class="flex min-h-screen">
-        <aside class="relative w-64 bg-blue-700">
+        <aside
+            class="
+              relative hidden w-64 bg-blue-700
+
+              md:block
+            "
+        >
             <div class="fixed w-64">
                 <div class="h-16 border-b">
                     <span>dashboard</span>
