@@ -7,6 +7,9 @@ export default defineNuxtConfig({
             },
         },
     },
+    colorMode: {
+        preference: "dark",
+    },
     compatibilityDate: "2024-11-01",
     devtools: { enabled: true },
     modules: ["@nuxtjs/supabase", "@nuxt/test-utils/module", "@nuxt/ui", "nuxt-api-party"],

@@ -22,23 +22,23 @@ const links = [
     <div class="flex min-h-screen">
         <aside
             class="
-              relative hidden w-64 bg-blue-700
+              relative hidden w-64 border-r
 
               md:block
             "
         >
             <div class="fixed w-64">
                 <div class="h-16 border-b">
-                    <span>dashboard</span>
+                    <UBadge>Dashboard</UBadge>
                 </div>
                 <UVerticalNavigation :links="links" :ui="{ base: 'p-4' }" />
             </div>
         </aside>
         <div class="flex flex-1 flex-col">
-            <nav class="sticky top-0 h-16 bg-green-800">
+            <nav class="sticky top-0 h-16 border-b bg-pale-prim-900">
                 navbar
             </nav>
-            <UContainer :ui="{ base: 'bg-red-700 flex-1' }">
+            <UContainer :ui="{ base: 'flex-1' }">
                 <slot />
             </UContainer>
         </div>
