@@ -12,6 +12,7 @@
         "lint:fix": "eslint . --fix"
     },
     "dependencies": {
+        "@nuxt/fonts": "^0.10.3",
         "@nuxt/ui": "^2.21.0",
         "@nuxtjs/supabase": "^1.4.6",
         "@supabase/supabase-js": "^2.48.1",
