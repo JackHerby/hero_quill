@@ -17,12 +17,6 @@ export default defineNuxtConfig({
         families: [
             {
                 global: true,
-                name: "Cinzel Decorative",
-                provider: "google",
-                weights: [400, 700],
-            },
-            {
-                global: true,
                 name: "MedievalSharp",
                 provider: "google",
                 weights: [400, 700],
@@ -30,6 +24,12 @@ export default defineNuxtConfig({
             {
                 global: true,
                 name: "Uncial Antiqua",
+                provider: "google",
+                weights: [400, 700],
+            },
+            {
+                global: true,
+                name: "Cinzel Decorative",
                 provider: "google",
                 weights: [400, 700],
             },
