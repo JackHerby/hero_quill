@@ -2,17 +2,17 @@
 const links = [
     {
         label: "Home",
-        icon: "i-heroicons-home",
+        icon: "i-game-icons-castle",
         to: "/",
     },
     {
         label: "Character Sheet",
-        icon: "i-heroicons-chart-bar",
+        icon: "i-game-icons-scroll-quill",
         to: "/character-sheet",
     },
     {
         label: "Campaign Creator",
-        icon: "i-heroicons-command-line",
+        icon: "i-game-icons-dungeon-gate",
         to: "/campaign-creator",
     },
 ];
