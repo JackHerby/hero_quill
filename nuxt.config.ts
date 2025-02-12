@@ -37,9 +37,10 @@ export default defineNuxtConfig({
     },
     modules: [
         "@nuxt/fonts",
-        "@nuxtjs/supabase",
+        "@nuxt/image",
         "@nuxt/test-utils/module",
         "@nuxt/ui",
+        "@nuxtjs/supabase",
         "nuxt-api-party",
     ],
     supabase: {
