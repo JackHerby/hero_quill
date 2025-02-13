@@ -27,10 +27,8 @@ const links = [
               md:block
             "
         >
-            <div class="fixed w-64">
-                <div class="h-16">
-                    <UBadge>Dashboard</UBadge>
-                </div>
+            <div class="fixed">
+                <NuxtPicture src="/hero_quill_emblem.webp" width="150" />
                 <UVerticalNavigation :links="links" :ui="{ base: 'p-4' }" />
             </div>
         </aside>
