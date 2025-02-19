@@ -1,32 +1,30 @@
 // eslint.config.mjs
-import antfu from "@antfu/eslint-config";
-import eslintPluginReadableTailwind from "eslint-plugin-readable-tailwind";
-import eslintParserVue from "vue-eslint-parser";
+import antfu from '@antfu/eslint-config';
+import eslintPluginReadableTailwind from 'eslint-plugin-readable-tailwind';
+import eslintParserVue from 'vue-eslint-parser';
 
 export default antfu(
-    {
-        type: "app",
-        stylistic: {
-            indent: 4,
-            semi: true,
-            quotes: "double",
-        },
+  {
+    type: 'app',
+    stylistic: {
+      semi: true,
     },
-    {
-        files: ["**/*.vue"],
-        languageOptions: {
-            parser: eslintParserVue,
-        },
+  },
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parser: eslintParserVue,
     },
-    {
-        plugins: {
-            "readable-tailwind": eslintPluginReadableTailwind,
-        },
-        rules: {
-            ...eslintPluginReadableTailwind.configs.warning.rules,
-            ...eslintPluginReadableTailwind.configs.error.rules,
+  },
+  {
+    plugins: {
+      'readable-tailwind': eslintPluginReadableTailwind,
+    },
+    rules: {
+      ...eslintPluginReadableTailwind.configs.warning.rules,
+      ...eslintPluginReadableTailwind.configs.error.rules,
 
-            "node/prefer-global/process": "off",
-        },
+      'node/prefer-global/process': 'off',
     },
+  },
 );
