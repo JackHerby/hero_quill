@@ -33,6 +33,7 @@
     "eslint-plugin-readable-tailwind": "^1.9.0",
     "happy-dom": "^16.7.3",
     "playwright-core": "^1.50.0",
+    "typescript": "^5.7.3",
     "vitest": "^3.0.4",
     "vue-eslint-parser": "^9.4.3"
   },
