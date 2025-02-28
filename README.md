@@ -4,6 +4,12 @@ Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduct
 
 ## Setup
 
+Enable pnpm:
+
+```bash
+corepack enable
+```
+
 Make sure to install dependencies:
 
 ```bash
