@@ -28,7 +28,6 @@ const links = [
       "
     >
       <div class="fixed">
-        <NuxtPicture src="/hero_quill_emblem.webp" width="150" />
         <UVerticalNavigation :links="links" :ui="{ base: 'p-4' }" />
       </div>
     </aside>
