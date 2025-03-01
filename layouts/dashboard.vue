@@ -22,12 +22,17 @@ const links = [
   <div class="flex min-h-screen">
     <aside
       class="
-        relative hidden w-64 border-r p-4
+        relative hidden w-64 border-r
 
         md:block
       "
     >
-      <div class="fixed">
+      <div
+        class="flex w-64 items-center justify-center border-r bg-pale-prim-900"
+      >
+        <NuxtPicture src="/hero_quill_logo.svg" width="150" />
+      </div>
+      <div class="fixed p-4">
         <UVerticalNavigation :links="links" :ui="{ base: 'p-4' }" />
       </div>
     </aside>
