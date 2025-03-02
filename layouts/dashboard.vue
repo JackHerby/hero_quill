@@ -28,9 +28,9 @@ const links = [
       "
     >
       <div
-        class="flex w-64 items-center justify-center border-r bg-pale-prim-900"
+        class="flex w-64 items-center justify-center border-r"
       >
-        <NuxtPicture src="/hero_quill_logo.svg" width="150" />
+        <NuxtPicture src="/hero_quill_logo_white.svg" width="150" />
       </div>
       <div class="fixed p-4">
         <UVerticalNavigation :links="links" :ui="{ base: 'p-4' }" />
