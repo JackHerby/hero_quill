@@ -25,6 +25,7 @@ export default antfu(
       ...eslintPluginReadableTailwind.configs.error.rules,
 
       'node/prefer-global/process': 'off',
+      'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
     },
   },
 );
