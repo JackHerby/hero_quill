@@ -27,12 +27,8 @@ const links = [
         md:block
       "
     >
-      <div
-        class="flex w-64 items-center justify-center border-r"
-      >
-        <NuxtPicture src="/hero_quill_logo_white.svg" width="150" />
-      </div>
       <div class="fixed p-4">
+        <NuxtImg class="mb-16" src="/hero_quill_logo_white.svg" width="100" />
         <UVerticalNavigation :links="links" :ui="{ base: 'p-4' }" />
       </div>
     </aside>

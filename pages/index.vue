@@ -9,10 +9,13 @@ async function getTestData() {
 
 const { data } = useDndApiData('ability-scores/cha');
 
-onMounted(() => getTestData());
+getTestData();
+
+const { data: user } = useFetch('/api/me');
 </script>
 
 <template>
+  <pre>{{ user }}</pre>
   <div>
     <ULink to="/auth/login">
       login
