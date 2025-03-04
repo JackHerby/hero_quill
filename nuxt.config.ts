@@ -40,8 +40,10 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/test-utils/module',
     '@nuxt/ui',
+    '@nuxtjs/i18n',
     '@nuxtjs/supabase',
     'nuxt-api-party',
+    'nuxt-zod-i18n',
   ],
   supabase: {
     redirect: false,

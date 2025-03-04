@@ -16,13 +16,16 @@
     "@nuxt/fonts": "^0.10.3",
     "@nuxt/image": "^1.9.0",
     "@nuxt/ui": "^2.21.0",
+    "@nuxtjs/i18n": "9.2.1",
     "@nuxtjs/supabase": "^1.4.6",
     "@supabase/supabase-js": "^2.49.1",
     "nuxt": "^3.15.4",
     "nuxt-api-party": "^2.1.2",
+    "nuxt-zod-i18n": "1.11.5",
     "openapi-typescript": "^7.6.1",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.3.0",
