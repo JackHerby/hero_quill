@@ -1,16 +1,13 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from '#ui/types';
-import type { InferType } from 'yup';
-import { object, string } from 'yup';
+import { z } from 'zod';
 
-const schema = object({
-  email: string().email('Invalid email').required('Required'),
-  password: string()
-    .min(8, 'Must be at least 8 characters')
-    .required('Required'),
+const schema = z.object({
+  email: z.string().email('Invalid email'),
+  password: z.string().min(8, 'Must be at least 8 characters'),
 });
 
-type Schema = InferType<typeof schema>;
+type Schema = z.output<typeof schema>;
 
 const state = reactive({
   email: undefined,
@@ -18,8 +15,12 @@ const state = reactive({
 });
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  // Do something with event.data
-  console.log(event.data);
+  // Do something with data
+  const { data } = await useFetch('/api/register', {
+    method: 'POST',
+    body: { email: state.email, password: state.password },
+  });
+  console.log(data.value);
 }
 </script>
 
