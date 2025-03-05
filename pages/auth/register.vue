@@ -14,8 +14,7 @@ const state = reactive({
   password: undefined,
 });
 
-async function onSubmit(event: FormSubmitEvent<Schema>) {
-  // Do something with data
+async function onSubmit(_event: FormSubmitEvent<Schema>) {
   const { data } = await useFetch('/api/register', {
     method: 'POST',
     body: { email: state.email, password: state.password },
