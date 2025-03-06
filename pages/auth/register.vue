@@ -15,11 +15,11 @@ const state = reactive({
 });
 
 async function onSubmit(_event: FormSubmitEvent<Schema>) {
-  const { data } = await useFetch('/api/register', {
+  await useFetch('/api/register', {
     method: 'POST',
     body: { email: state.email, password: state.password },
   });
-  console.log(data.value);
+  await navigateTo({ name: 'home' });
 }
 </script>
 
