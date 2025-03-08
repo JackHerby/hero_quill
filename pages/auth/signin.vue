@@ -15,18 +15,21 @@ const state = reactive({
 });
 
 async function onSubmit(_event: FormSubmitEvent<Schema>) {
-  await useFetch('/api/register', {
+  await useFetch('/api/signin', {
     method: 'POST',
     body: { email: state.email, password: state.password },
   });
-  await navigateTo({ name: 'home' });
+  await navigateTo({ name: 'index' });
 }
 </script>
 
 <template>
   <nav class="sticky top-0 h-16 border-b bg-pale-prim-900 p-4">
-    <ULink to="/auth/login">
+    <ULink to="/auth/signin">
       login
+    </ULink>
+    <ULink to="/auth/register">
+      register
     </ULink>
     <ULink to="/dashboard">
       dashboard

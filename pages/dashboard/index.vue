@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <h1>dashboard</h1>
-  <ULink to="/auth/login">
+  <ULink to="/auth/signin">
     login
   </ULink>
   <ULink to="/auth/register">

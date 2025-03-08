@@ -18,11 +18,15 @@ async function getMe() {
   const { data } = useFetch('/api/me');
   me.value = data;
 }
+
+async function signOut() {
+  await $fetch('/api/signout', { method: 'POST' });
+}
 </script>
 
 <template>
-  <UContainer>
-    <ULink to="/auth/login">
+  <nav class="sticky top-0 h-16 border-b bg-pale-prim-900 p-4">
+    <ULink to="/auth/signin">
       login
     </ULink>
     <ULink to="/auth/register">
@@ -31,11 +35,19 @@ async function getMe() {
     <ULink to="/dashboard">
       dashboard
     </ULink>
+    <ULink to="/">
+      home
+    </ULink>
+  </nav>
+  <UContainer>
     <h1 v-for="item in testData" :key="item.id">
       {{ item.name }} -- {{ item.created_at }}
     </h1>
     <UButton @click="getMe">
       Me
+    </UButton>
+    <UButton @click="signOut">
+      Sign Out
     </UButton>
     <pre>{{ me }}</pre>
   </UContainer>
