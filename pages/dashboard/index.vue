@@ -9,8 +9,8 @@ definePageMeta({
   <ULink to="/auth/signin">
     login
   </ULink>
-  <ULink to="/auth/register">
-    register
+  <ULink to="/auth/signup">
+    signup
   </ULink>
   <ULink to="/">
     home

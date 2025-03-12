@@ -15,11 +15,20 @@ const state = reactive({
 });
 
 async function onSubmit(_event: FormSubmitEvent<Schema>) {
-  await useFetch('/api/signin', {
-    method: 'POST',
-    body: { email: state.email, password: state.password },
-  });
-  await navigateTo({ name: 'index' });
+  try {
+    await $fetch('/api/signin', {
+      method: 'POST',
+      body: { email: state.email, password: state.password },
+    });
+    await navigateTo({ name: 'index' });
+  } catch (error) {
+    if (isNuxtError(error)) {
+      showError({
+        statusCode: error.statusCode,
+        statusMessage: error.statusMessage,
+      });
+    }
+  }
 }
 </script>
 
@@ -28,8 +37,8 @@ async function onSubmit(_event: FormSubmitEvent<Schema>) {
     <ULink to="/auth/signin">
       login
     </ULink>
-    <ULink to="/auth/register">
-      register
+    <ULink to="/auth/signup">
+      signup
     </ULink>
     <ULink to="/dashboard">
       dashboard

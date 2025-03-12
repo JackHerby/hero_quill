@@ -10,7 +10,17 @@ export default eventHandler(async (event) => {
 
     return { user: data.user };
   } catch (error) {
-    console.warn(error);
-    return { error: 'An unexpected error occured' };
+    let statusMessage: string;
+
+    if (error instanceof Error) {
+      statusMessage = error.message;
+    } else {
+      statusMessage = 'An unexpected error has occurred.';
+    }
+
+    throw createError({
+      statusCode: 500,
+      statusMessage,
+    });
   }
 });

@@ -7,16 +7,34 @@ async function getTestData() {
   testData.value = data;
 }
 
-const { data: _data } = useDndApiData('ability-scores/cha');
-
 getTestData();
 
-const { data: _user } = useFetch('/api/me');
+const { data: _data } = useDndApiData('ability-scores/cha');
 
-const me = ref();
-async function getMe() {
-  const { data } = useFetch('/api/me');
-  me.value = data;
+const user = ref();
+async function getUser() {
+  console.log('getUser');
+  try {
+    const data = await $fetch('/api/me');
+    user.value = data;
+  } catch (error) {
+    console.log('isNuxtError: ', isNuxtError(error));
+    showError({
+      statusCode: error.statusCode,
+      statusMessage: error.statusMessage,
+    });
+    // if (isNuxtError(error)) {
+    //  showError({
+    //    statusCode: error.statusCode,
+    //    statusMessage: error.statusMessage,
+    //  });
+    // } else {
+    //  showError({
+    //    statusCode: 404,
+    //    statusMessage: 'Something went wrong',
+    //  });
+    // }
+  }
 }
 
 async function signOut() {
@@ -29,8 +47,8 @@ async function signOut() {
     <ULink to="/auth/signin">
       login
     </ULink>
-    <ULink to="/auth/register">
-      register
+    <ULink to="/auth/signup">
+      signup
     </ULink>
     <ULink to="/dashboard">
       dashboard
@@ -43,12 +61,12 @@ async function signOut() {
     <h1 v-for="item in testData" :key="item.id">
       {{ item.name }} -- {{ item.created_at }}
     </h1>
-    <UButton @click="getMe">
-      Me
+    <UButton @click="getUser">
+      Get User
     </UButton>
     <UButton @click="signOut">
       Sign Out
     </UButton>
-    <pre>{{ me }}</pre>
+    <pre>{{ user }}</pre>
   </UContainer>
 </template>
