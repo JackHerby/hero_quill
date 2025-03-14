@@ -8,18 +8,32 @@ export default eventHandler(async (event) => {
     const client = await serverSupabaseClient(event);
     const { data } = await client.auth.signInWithPassword({ email, password });
 
+    if (!data.user) {
+      throw createError({
+        statusCode: 401,
+        statusMessage: 'Invalid credentials',
+      });
+    }
+
     return { user: data.user };
   } catch (error) {
-    let statusMessage: string;
+    function isCustomError(error: unknown): error is { statusCode: number; statusMessage: string } {
+      return typeof error === 'object'
+        && error !== null
+        && 'statusCode' in error
+        && 'statusMessage' in error;
+    }
 
-    if (error instanceof Error) {
-      statusMessage = error.message;
-    } else {
-      statusMessage = 'An unexpected error has occurred.';
+    let statusCode = 500;
+    let statusMessage = 'An unexpected error has occurred.';
+
+    if (isCustomError(error)) {
+      statusCode = error.statusCode;
+      statusMessage = error.statusMessage;
     }
 
     throw createError({
-      statusCode: 500,
+      statusCode,
       statusMessage,
     });
   }

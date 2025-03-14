@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from '#ui/types';
+import { FetchError } from 'ofetch';
 import { z } from 'zod';
 
 const schema = z.object({
@@ -20,12 +21,18 @@ async function onSubmit(_event: FormSubmitEvent<Schema>) {
       method: 'POST',
       body: { email: state.email, password: state.password },
     });
-    await navigateTo({ name: 'index' });
+    // await navigateTo({ name: 'index' });
   } catch (error) {
-    if (isNuxtError(error)) {
+    if (error instanceof FetchError) {
+      console.log(error.statusCode);
       showError({
         statusCode: error.statusCode,
         statusMessage: error.statusMessage,
+      });
+    } else {
+      showError({
+        statusCode: 404,
+        statusMessage: 'Oops, something went wrong.',
       });
     }
   }
