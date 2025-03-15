@@ -5,12 +5,14 @@ export default eventHandler(async (event) => {
   const { email, password } = body;
 
   const client = await serverSupabaseClient(event);
-  const { data } = await client.auth.signInWithPassword({ email, password });
+  const { data, error } = await client.auth.signInWithPassword({ email, password });
 
-  if (!data.user) {
+  if (error) {
+    console.error(error);
+    const { status, message } = error;
     throw createError({
-      statusCode: 401,
-      statusMessage: 'Invalid credentials',
+      statusCode: status,
+      statusMessage: message,
     });
   }
 

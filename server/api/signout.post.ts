@@ -1,13 +1,12 @@
 import { serverSupabaseClient } from '#supabase/server';
 
 export default eventHandler(async (event) => {
-  try {
-    const client = await serverSupabaseClient(event);
-    await client.auth.signOut();
+  const client = await serverSupabaseClient(event);
+  const { error } = await client.auth.signOut();
 
+  if (error) {
+    return { error, success: false };
+  } else {
     return { success: true };
-  } catch (error) {
-    console.warn(error);
-    return { error: 'An unexpected error occured' };
   }
 });

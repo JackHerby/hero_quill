@@ -22,10 +22,15 @@ async function onSubmit(_event: FormSubmitEvent<Schema>) {
     });
     await navigateTo({ name: 'index' });
   } catch (error) {
-    if (isNuxtError(error)) {
+    if (isNitroError(error)) {
       showError({
         statusCode: error.statusCode,
         statusMessage: error.statusMessage,
+      });
+    } else {
+      showError({
+        statusCode: 404,
+        statusMessage: 'Oops, something went wrong.',
       });
     }
   }

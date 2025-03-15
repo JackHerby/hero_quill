@@ -14,8 +14,10 @@ const { data: _data } = useDndApiData('ability-scores/cha');
 const { data: user, error, refresh } = await useFetch('/api/me');
 
 async function signOut() {
-  await $fetch('/api/signout', { method: 'POST' });
-  refresh();
+  const { success } = await $fetch('/api/signout', { method: 'POST' });
+  if (success) {
+    refresh();
+  }
 }
 </script>
 
