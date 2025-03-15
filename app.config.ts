@@ -1,6 +1,6 @@
 export default defineAppConfig({
-  ui: {
-    primary: 'sangria',
-    gray: 'cream-can',
-  },
+    ui: {
+        primary: "sangria",
+        gray: "cream-can",
+    },
 });
